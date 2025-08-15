@@ -1,0 +1,120 @@
+
+// README.md
+# Lumina Photography Website
+
+A stunning, creative photography website built with Next.js and Tailwind CSS, featuring unique design elements and smooth animations.
+
+## Features
+
+- **Creative Design Elements**
+  - Circular portfolio carousel in hero section
+  - Diamond-shaped service cards with gradients
+  - Hexagonal portfolio grid layout
+  - Glassmorphism effects throughout
+  - Floating animations and smooth transitions
+
+- **Professional Features**
+  - Responsive design (mobile-first approach)
+  - Service packages with detailed pricing
+  - Portfolio showcase with category filtering
+  - Client testimonials with auto-rotating carousel
+  - Comprehensive FAQ section
+  - Contact form with service selection
+  - SEO optimized structure
+
+- **Visual Appeal**
+  - Sophisticated color palette (navy, orange, warm tones)
+  - Typography mixing serif (Playfair Display) and sans-serif (Inter)
+  - Gradient backgrounds and card effects
+  - Subtle animations and hover effects
+  - Professional photography-focused imagery
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Run development server:
+```bash
+npm run dev
+```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+Build for production:
+```bash
+npm run build
+npm start
+```
+
+## Cost Breakdown (Total: KES 15,000)
+
+1. **Domain Registration**: KES 5,000/year
+   - .co.ke domain from KeNIC
+   - DNS management included
+
+2. **Email Configuration**: KES 5,000/year  
+   - Professional email (hello@luminaphoto.co.ke)
+   - Google Workspace or similar
+   - 15GB storage, calendar integration
+
+3. **Website Development**: KES 5,000 (one-time)
+   - Complete Next.js application
+   - Unique creative design
+   - All pages with smooth navigation
+   - Portfolio gallery system
+   - Booking form integration
+   - Mobile-responsive design
+
+## Maintenance: KES 5,000/year
+
+- Domain renewal: KES 2,000
+- Email service: KES 2,000  
+- Hosting (Vercel/Netlify): KES 1,000
+- Content updates/support
+
+## Design Inspiration
+
+This website draws inspiration from:
+- **Kim's Photography Online**: Clean, professional layout structure
+- **Pixieset**: Modern portfolio presentation and user experience
+- **Unique Elements**: 
+  - Circular carousel design
+  - Diamond and hexagonal shapes
+  - Glassmorphism effects
+  - Creative color gradients
+
+## Technologies Used
+
+- Next.js 14 (React framework)
+- Tailwind CSS (styling)
+- Lucide React (icons)
+- Custom CSS animations
+- Responsive design principles
+- Modern web performance optimization
+
+## Customization
+
+The website is fully customizable:
+- **Colors**: Easily modify the color palette in tailwind.config.js
+- **Services**: Update pricing and packages in the services array
+- **Portfolio**: Add/remove portfolio items and categories
+- **Content**: All text content is easily editable
+- **Animations**: Custom CSS animations can be modified
+- **Layout**: Modular component structure for easy updates
+
+## Unique Features
+
+1. **Circular Portfolio Preview**: Interactive circular layout in hero section
+2. **Diamond Service Cards**: Creative diamond-shaped service presentation
+3. **Hexagonal Portfolio Grid**: Unique hexagonal layout for portfolio items
+4. **Glassmorphism Effects**: Modern frosted glass effects throughout
+5. **Auto-rotating Testimonials**: Smooth carousel with manual navigation
+6. **Professional Form**: Comprehensive booking form with service selection
+7. **Mobile Optimized**: Perfect user experience on all devices
+
+This website stands out from typical photography sites with its creative geometric shapes, sophisticated animations, and professional presentation that will impress potential clients and convert inquiries into bookings. 
