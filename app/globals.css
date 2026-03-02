@@ -2,33 +2,211 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================
+   DEFAULT THEME — Dark cinematic studio
+   ============================================================ */
+:root,
+[data-season="default"] {
+  --color-primary: #0F0F0F;
+  --color-accent: #C9A96E;
+  --color-bg: #141414;
+  --color-text: #F0EDE8;
+  --hero-bg: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+  --banner-bg: #C9A96E;
+  --banner-text: #0F0F0F;
+}
+
+/* ============================================================
+   VALENTINE THEME — Feb 1–14
+   ============================================================ */
+[data-season="valentine"] {
+  --color-primary: #1A0A0E;
+  --color-accent: #D4687B;
+  --color-bg: #1A0A0E;
+  --color-text: #F0E8EC;
+  --hero-bg: linear-gradient(135deg, #1A0A0E 0%, #2A1018 100%);
+  --banner-bg: #D4687B;
+  --banner-text: #1A0A0E;
+}
+
+/* ============================================================
+   CHRISTMAS THEME — Dec 1–26
+   ============================================================ */
+[data-season="christmas"] {
+  --color-primary: #0A1A0A;
+  --color-accent: #C8912A;
+  --color-bg: #0A1A0A;
+  --color-text: #F0F0E8;
+  --hero-bg: linear-gradient(135deg, #0A1A0A 0%, #1A2A1A 100%);
+  --banner-bg: #C8912A;
+  --banner-text: #0A1A0A;
+}
+
+/* ============================================================
+   EASTER THEME — Mar 20 – Apr 15
+   ============================================================ */
+[data-season="easter"] {
+  --color-primary: #0A0F0A;
+  --color-accent: #7BAF8E;
+  --color-bg: #0F1A0F;
+  --color-text: #E8F0E8;
+  --hero-bg: linear-gradient(135deg, #0F1A0F 0%, #1A2A1A 100%);
+  --banner-bg: #7BAF8E;
+  --banner-text: #0F1A0F;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--color-bg);
   }
+
   body {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Karla', 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
   }
 }
 
+/* ============================================================
+   SEASONAL BANNER & WHATSAPP FLOAT
+   ============================================================ */
+.seasonal-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: var(--banner-bg);
+  color: var(--banner-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  z-index: 50;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  transition: transform 0.2s ease;
+  animation: whatsapp-pulse 3s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 28px rgba(37, 211, 102, 0.7); }
+}
+
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-accent to-warm text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:scale-105;
-  }
-  
-  .btn-secondary {
-    @apply bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-300;
+    @apply text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105;
+    background: var(--color-accent);
+    color: var(--color-primary);
   }
 
-  .diamond-shape {
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  .btn-outline {
+    @apply bg-transparent px-8 py-3 rounded-full font-medium transition-all duration-300 border-2;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
-  .hexagon-shape {
-    clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+  .btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
   }
 
   .glass-effect {
-    @apply backdrop-blur-md bg-white/30 border border-white/20;
+    @apply backdrop-blur-md border;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
   }
+}
+
+/* ============================================================
+   GALLERY MASONRY LAYOUT
+   ============================================================ */
+.masonry-grid {
+  columns: 2;
+  column-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 4;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   PAGE TRANSITION — dark curtain wipe
+   ============================================================ */
+@keyframes curtain-in {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
+/* ============================================================
+   CHRISTMAS: Gold particle effect on hero
+   ============================================================ */
+[data-season="christmas"] .hero-gold::before {
+  content: "✨";
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  animation: float-gentle 6s ease-in-out infinite;
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
 }
